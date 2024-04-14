@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="bg-dark">
+    <main class="w-75 mx-auto">
+      <div class="mx-3 pt-4 text-light fw-bold">
+        <h4 class="">Product Management System</h4>
+      </div>
+      <section class="p-3">
+        <div class="inputs-form">
+          <label for="productName" class="my-2 text-light">Product Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="productName"
+            oninput="vaildateProduct(this)"
+            placeholder="product Name"
+          />
+        </div>
+        <div class="inputs-form mb-2 py-2">
+          <input
+            onkeyup=" getTotal() "
+            type="number"
+            class=""
+            id="productPrice"
+            placeholder=" Price"
+          />
+          <input
+            onkeyup=" getTotal() "
+            type="number"
+            class=""
+            id="productTaxes"
+            placeholder="Taxes"
+          />
+          <input
+            onkeyup=" getTotal() "
+            type="number"
+            class=""
+            id="productAds"
+            placeholder="Ads"
+          />
+          <input
+            onkeyup=" getTotal() "
+            type="number"
+            class=""
+            id="productDiscount"
+            placeholder="Discount"
+          />
+          <button class="btn btn-danger" id="Total">Total</button>
+        </div>
+        <div class="inputs-form mb-2">
+          <label for="productCategory" class="my-2 text-light"
+            >Product Category:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            oninput="vaildateProduct(this)"
+            id="productCategory"
+            placeholder="product Category"
+          />
+        </div>
+        <div class="inputs-form mb-2">
+          <label for="productDescription" class="my-2 text-light"
+            >Product Description:</label
+          >
+          <textarea
+            class="form-control"
+            id="productDescription"
+            oninput="vaildateProduct(this)"
+            placeholder="product Description"
+          ></textarea>
+        </div>
+
+        <button
+          onclick="addProduct()"
+          class="btn btn-light w-100 fw-bold"
+          id="addBtn"
+        >
+          Add Product
+        </button>
+
+        <button
+          class="btn btn-primary w-100 d-none"
+          onclick="updateData()"
+          id="updateBtn"
+        >
+          Update Product
+        </button>
+      </section>
+      <input
+        id="search"
+        class="form-control mx-auto w-75"
+        placeholder="search by name...."
+        type="text"
+      />
+
+      <!-- <input
+        id="searchInput"
+        oninput="searchProduct()"
+        type="text"
+        class="form-control my-3 w-75 mx-auto"
+        placeholder="Search..."
+      /> -->
+
+      <section class="mt-4">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Delete</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          <tbody id="tableData"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- <div id="container" class="d-flex justify-content-center flex-wrap"></div> -->
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
